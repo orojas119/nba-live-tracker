@@ -11,11 +11,30 @@ app = FastAPI(title="NBA Live Tracker API")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=[
+        "http://localhost:5173",
+        "https://nba-live-tracker.vercel.app",
+        "https://*.vercel.app",
+    ],
+    allow_origin_regex=r"https://.*\.vercel\.app",
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+
+@app.get("/")
+def root():
+    return {
+        "name": "NBA Live Tracker API",
+        "version": "1.0.0",
+        "endpoints": [
+            "/api/health",
+            "/api/games/today",
+            "/api/games/{game_id}/boxscore",
+            "/api/standings",
+        ],
+    }
 
 # Simple in-memory cache: {key: (value, expires_at)}
 _cache: dict[str, tuple[Any, float]] = {}
