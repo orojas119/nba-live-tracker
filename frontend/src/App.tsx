@@ -51,7 +51,7 @@ export default function App() {
                   NBA Live Tracker
                 </h1>
                 <p className="text-xs text-gray-500">
-                  2025–26 Season · Updates every 30 seconds
+                  2026-27 Season Preview · Live during the NBA season (Oct 2026)
                 </p>
               </div>
             </div>
@@ -81,18 +81,7 @@ export default function App() {
 
           {/* Standings sidebar — fixed width on large screens */}
           <div className="w-full lg:w-72 xl:w-80 shrink-0">
-            {standings.east.length > 0 ? (
-              <TeamStandings standings={standings} />
-            ) : (
-              <div className="rounded-xl border border-gray-800 bg-gray-900 p-5">
-                <p className="text-xs font-semibold uppercase tracking-widest text-gray-500 mb-4">
-                  Standings
-                </p>
-                <div className="flex items-center justify-center py-8">
-                  <div className="h-8 w-8 rounded-full border-2 border-gray-700 border-t-orange-500 animate-spin" />
-                </div>
-              </div>
-            )}
+            <TeamStandings standings={standings} />
           </div>
         </div>
       </main>
@@ -101,7 +90,7 @@ export default function App() {
       <footer className="mt-12 border-t border-gray-800 py-6">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <p className="text-center text-xs text-gray-700">
-            Data from NBA API · Built with FastAPI + React
+            Data from NBA API · 2026-27 season begins Oct 2026 · Built with FastAPI + React
           </p>
         </div>
       </footer>

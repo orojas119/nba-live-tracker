@@ -54,14 +54,36 @@ function ConferenceTable({
 }
 
 export default function TeamStandings({ standings }: Props) {
+  const isEmpty = standings.east.length === 0 && standings.west.length === 0;
+
+  if (isEmpty) {
+    return (
+      <aside className="rounded-xl border border-gray-800 bg-gray-900 p-5">
+        <h2 className="mb-4 text-xs font-semibold uppercase tracking-widest text-gray-500">
+          Standings
+        </h2>
+        <p className="text-sm text-gray-500 text-center p-8">
+          Standings available during the NBA season (Oct–Jun)
+        </p>
+      </aside>
+    );
+  }
+
   return (
     <aside className="rounded-xl border border-gray-800 bg-gray-900 p-5 lg:sticky lg:top-6">
-      <h2 className="mb-5 text-xs font-semibold uppercase tracking-widest text-gray-500">
-        Standings
-      </h2>
+      <div className="mb-5 flex items-center justify-between">
+        <h2 className="text-xs font-semibold uppercase tracking-widest text-gray-500">
+          Standings
+        </h2>
+        <span className="text-[10px] text-gray-600 font-medium">
+          2025-26 Final
+        </span>
+      </div>
       <ConferenceTable title="Eastern Conference" teams={standings.east} />
       <ConferenceTable title="Western Conference" teams={standings.west} />
-      <p className="mt-2 text-xs text-gray-700 text-center">Top 5 per conference</p>
+      <p className="mt-3 text-[11px] text-gray-600 text-center">
+        Top 8 per conference · 2026-27 season begins October 2026
+      </p>
     </aside>
   );
 }
