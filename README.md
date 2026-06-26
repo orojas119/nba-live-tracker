@@ -2,6 +2,13 @@
 
 Real-time NBA game scores and standings — FastAPI backend, React frontend.
 
+## Live
+
+| | URL |
+|-|-----|
+| Frontend | https://nba-live-tracker-mauve.vercel.app |
+| Backend API | https://nba-live-tracker-api.onrender.com |
+
 ## Stack
 
 | Layer    | Tech                                      |
@@ -49,9 +56,9 @@ Visit `http://localhost:5173`
 
 ## Deployment
 
-| Service | Target |
-|---------|--------|
-| Backend | Render — connect GitHub repo, set root to `backend/` |
-| Frontend | Vercel — connect GitHub repo, set root to `frontend/` |
+| Service | URL |
+|---------|-----|
+| Backend | https://nba-live-tracker-api.onrender.com |
+| Frontend | https://nba-live-tracker-mauve.vercel.app |
 
-After deploying the backend, update `frontend/.env.production` with the Render URL, then redeploy the frontend.
+Backend is deployed on Render (root dir: `backend/`), frontend on Vercel (root dir: `frontend/`).
